@@ -13,7 +13,7 @@ import sys
 
 if __name__ == "__main__":
     # Get the employee ID from the command-line argument
-    user_id = sys.argv[1] 
+    user_id = sys.argv[1]
     url = "https://jsonplaceholder.typicode.com/"
 
     user = requests.get(url + "users/{}".format(user_id)).json()
