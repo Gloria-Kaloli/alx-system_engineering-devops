@@ -7,4 +7,3 @@ datadir         = /var/lib/mysql
 log-error       = /var/log/mysql/error.log
 server-id       =  2
 relay-log       = /var/log/mysql/mysql-relay-bin.log
-bind address 	= 127.0.0.1
