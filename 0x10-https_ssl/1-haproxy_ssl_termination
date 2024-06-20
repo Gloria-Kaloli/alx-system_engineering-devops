@@ -12,7 +12,7 @@ defaults
 
 frontend th3gr00t-tech-frontend
 	bind *:80
-	bind *:443 ssl crt /etc/haproxy/certs/lolisystemsllc.tech.pem
+	bind *:443 ssl crt /etc/haproxy/certs/www.lolisystemsllc.tech.pem
 	http-request redirect scheme https unless { ssl_fc }
 	http-request set-header X-Forwarded-Proto https
 	default_backend th3gr00t-tech-backend
@@ -21,3 +21,6 @@ backend th3gr00t-tech-backend
 	balance roundrobin
 	server 489006-web-01 54.237.107.86:80 check
 	server 489006-web-02 18.204.7.130:80 check
+
+backend letsencrypt-backend
+   	 server letsencrypt 127.0.0.1:54321
